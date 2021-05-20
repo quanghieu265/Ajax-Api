@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Student List</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Danh sách học viên</h1>
+        <a href="./adding-form.html" class="add"><i class="fas fa-plus-circle"></i>Thêm học viên
+        </a>
+        <div class="student-list">
+            <div class="title-list">
+                <p>Họ tên</p>
+                <p>Ngày sinh</p>
+                <p>Email</p>
+                <p>Số Điện thoại</p>
+            </div>
+            <div class="info-list">
+                <div class="name"></div>
+                <div class="birth"></div>
+                <div class="email"></div>
+                <div class="number"></div>
+                <div class="button-list">
+                    <a href="./edit-form.html" class="edit"><i class="far fa-edit"></i>Chỉnh sửa</a> |
+                    <button type="button" class="remove"><i class="fas fa-trash-alt"></i><span>Xóa</span></button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-show">
+        <div class="modal">
+            <div class="modal-title">
+                <p>Bạn có đồng ý xóa thông tin học viên ? </p>
+            </div>
+            <div class="modal-button">
+                <button type="button" class="close">Hủy</button>
+                <button type="button" class="accept">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./database.js" type="text/javascript"></script>
+    <script src="./button.js" type="text/javascript"></script>
+</body>
+
+</html>

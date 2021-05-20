@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 70%;
+    margin: 100px auto auto auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.add {
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: #00A751;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: #006330;
+}
+
+.fa-plus-circle {
+    padding-right: 5px;
+}
+
+.title-list,
+.info-list {
+    display: grid;
+    grid-template-columns: 25% 10% 25% 15% 25%;
+    padding: 20px 15px;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.title-list {
+    font-weight: 600;
+    color: white;
+    background-color: #333A40;
+}
+
+a {
+    text-decoration: none;
+}
+
+.far,
+.fas {
+    padding-right: 5px;
+}
+
+.edit {
+    font-weight: 500;
+    color: #01A4B6;
+}
+
+.remove {
+    font-weight: 500;
+    color: red;
+    border: none;
+    font-size: 20px;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.info-list:hover {
+    background-color: #ECECEC;
+}
+
+.edit:hover {
+    color: #017683;
+}
+
+.remove:hover {
+    color: #900;
+}
+
+
+/* CSS modal */
+
+.modal-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    display: none;
+}
+
+.modal {
+    max-width: fit-content;
+    margin: 0px auto;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-color: white;
+    opacity: 0;
+}
+
+.modal-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    font-weight: 500;
+}
+
+.modal-button {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px
+}
+
+.close,
+.accept {
+    padding: 8px 15px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.close {
+    background-color: #5C636A;
+}
+
+.accept {
+    background-color: #0B5ED7;
+}
+
+.close:hover {
+    background-color: #3c4146;
+    cursor: pointer;
+}
+
+.accept:hover {
+    background-color: #084296;
+    cursor: pointer;
+}
+
+.fa-times {
+    color: grey;
+}
+
+.fa-times:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.fade-in {
+    margin-top: 50px;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 0.2s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+        margin-top: 0px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 50px;
+    }
+}
+
+.show {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+    animation-name: show-up;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 0.2s;
+}
+
+@keyframes show-up {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

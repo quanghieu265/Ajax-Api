@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 50%;
+    margin: 200px auto;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+span {
+    color: red;
+}
+
+.button-form {
+    display: flex;
+    gap: 15px;
+    margin: 20px auto auto auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.save {
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: #00A751;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color: #006330;
+}
+
+.go-back {
+    background-color: #5C636A;
+    width: fit-content;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.go-back:hover {
+    background-color: #3c4146;
+    cursor: pointer;
+}

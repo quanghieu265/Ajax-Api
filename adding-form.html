@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="form.css">
+    <title>Adding Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thêm Mới Học Viên</h1>
+        <form action="./test.json" method="GET">
+            <label for="name">Họ tên <span>*</span></label>
+            <input type="text" id="name" name="name" placeholder="Hãy nhập tên của bạn" required>
+
+            <label for="birth">Ngày sinh</label>
+            <input type="date" id="birth" name="birthday" placeholder="Hãy nhập ngày sinh của ban">
+
+            <label for="email">Email <span>*</span></label>
+            <input type="email" id="email" name="email" placeholder="Hãy nhập email của bạn" required>
+
+            <label for="phone">Phone <span>*</span></label>
+            <input type="number" id="phone" name="phone" placeholder="Hãy nhập số đt của bạn" required>
+
+            <div class="button-form">
+                <a href="./index.html" class="go-back">
+                    <i class="fas fa-chevron-left"></i> Quay lại
+                </a>
+                <button type="submit" value="submit" class="save">
+                    <i class="far fa-save"></i> Lưu
+                </button>
+            </div>
+        </form>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            let data = new FormData(event.target);
+
+            let formJSON = Object.fromEntries(data.entries());
+
+            let results = JSON.stringify(formJSON);
+
+            let xhttp = new XMLHttpRequest();
+
+
+            xhttp.open("POST", "database.json", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(results);
+
+        }
+        let form = document.querySelector('form');
+        form.addEventListener('submit', handleFormSubmit);
+    </script>
+</body>
+
+</html>
