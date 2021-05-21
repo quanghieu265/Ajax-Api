@@ -51,7 +51,7 @@
             let xhttp = new XMLHttpRequest();
 
 
-            xhttp.open("POST", "database.json", true);
+            xhttp.open("POST", "http://localhost:3000/users", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send(results);
 

@@ -26,5 +26,5 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 //Bắt đầu lấy dữ liệu từ sever
-xmlhttp.open("GET", "database.json", true);
+xmlhttp.open("GET", "http://localhost:3000/users", true);
 xmlhttp.send();
