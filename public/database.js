@@ -1,4 +1,4 @@
-let xmlhttp = new XMLHttpRequest(); // tạo 1 biến chứa cái xml request để lấy data từ sever
+let xmlhttp = new XMLHttpRequest; // tạo 1 biến chứa cái xml request để lấy data từ sever
 let myObj;
 let userID;
 //Xác định một hàm được gọi khi thuộc tính readyState thay đổi 
@@ -44,7 +44,7 @@ xmlhttp.onreadystatechange = function() {
             }
             $.ajax({
                 type: "PUT",
-                url: "http://list-techmaster123.herokuapp.com/userIndex/1",
+                url: "https://list-techmaster123.herokuapp.com/userIndex/1",
                 data: ` {
                     "UI":${userID}
                    }`,
@@ -55,5 +55,5 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 //Bắt đầu lấy dữ liệu từ sever
-xmlhttp.open("GET", "http://list-techmaster123.herokuapp.com/db", true);
+xmlhttp.open("GET", "https://list-techmaster123.herokuapp.com/db", true);
 xmlhttp.send();

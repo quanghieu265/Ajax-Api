@@ -10,7 +10,7 @@ $('.close').click(function() {
 })
 $('.accept').click(function() {
     $.ajax({
-        url: `http://list-techmaster123.herokuapp.com/users/${userID}`,
+        url: `https://list-techmaster123.herokuapp.com/users/${userID}`,
         type: 'DELETE',
     });
     $('.info-list').eq(index).remove();
