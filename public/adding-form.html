@@ -52,20 +52,20 @@
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 2 & this.status == 201) {
                     alert("Thêm Mới Học Viên Thành Công");
-                    window.location.replace("http://localhost:3000");
+                    window.location.replace("http://list-techmaster123.herokuapp.com");
 
                 } else if (this.readyState == 2 & this.status !== 201) {
                     alert("Thêm Mới Học Viên Không Thành Công");
-                    window.location.replace("http://localhost:3000");
+                    window.location.replace("http://list-techmaster123.herokuapp.com");
                 }
             }
-            xhttp.open("POST", "http://localhost:3000/users", true);
+            xhttp.open("POST", "http://list-techmaster123.herokuapp.com/users", true);
             xhttp.setRequestHeader("Content-Type", "application/json"); //content-type phải là application/json
             xhttp.send(results);
 
             // $.ajax({
             //     type: "POST",
-            //     url: "http://localhost:3000/users",
+            //     url: "http://list-techmaster123.herokuapp.com/users",
             //     data: JSON.stringify(formJSON),
             //     contentType: "application/json",
             //     dataType: 'json'

@@ -44,7 +44,7 @@ xmlhttp.onreadystatechange = function() {
             }
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3000/userIndex/1",
+                url: "http://list-techmaster123.herokuapp.com/userIndex/1",
                 data: ` {
                     "UI":${userID}
                    }`,
@@ -55,5 +55,5 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 //Bắt đầu lấy dữ liệu từ sever
-xmlhttp.open("GET", "http://localhost:3000/db", true);
+xmlhttp.open("GET", "http://list-techmaster123.herokuapp.com/db", true);
 xmlhttp.send();
