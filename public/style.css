@@ -194,10 +194,6 @@ a {
 .show {
     background-color: rgba(0, 0, 0, 0.2);
     display: block;
-    animation-name: show-up;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-duration: 0.2s;
 }
 
 @keyframes show-up {
