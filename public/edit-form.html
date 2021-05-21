@@ -50,10 +50,10 @@
                 type: "GET",
                 url: `https://list-techmaster123.herokuapp.com/users/${userID}`,
             }).done(function(obj) {
-                $('name').html() = obj.name;
-                $('birth').html() = obj.birthday;
-                $('email').html() = obj.email;
-                $('phone').html() = obj.phone;
+                $('#name').val(`${obj.name}`);
+                $('#birth').val(`${obj.birthday}`);
+                $('#email').val(`${obj.email}`);
+                $('#phone').val(`${obj.phone}`);
             })
         })
 
