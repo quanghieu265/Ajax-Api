@@ -209,5 +209,10 @@
       "quantity": 84,
       "status": true
     }
+  ],
+  "java": [
+    {
+      "remove":"$('.remove').click(function() {$('.modal-show').toggleClass('show');$('.modal').toggleClass('fade-in');}"
+    }
   ]
 }
