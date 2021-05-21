@@ -47,13 +47,28 @@
             let formJSON = Object.fromEntries(data.entries());
 
             let results = JSON.stringify(formJSON);
+            $.ajax({
+                    method: "GET",
+                    url: "http://localhost:3000/userIndex/1",
 
-            let xhttp = new XMLHttpRequest();
+                })
+                .done(function(respon) {
+                    let UIndex = respon;
+                    $.ajax({
+                        type: "PUT",
+                        url: `http://localhost:3000/users/${UIndex['UI']}`,
+                        data: JSON.stringify(formJSON),
+                        contentType: "application/json",
+                        dataType: 'json',
+                    }).done(function() {
+                        alert("Thay Đổi Thông Tin Thành Công")
+                        window.location.replace("http://localhost:3000");
+                    }).fail(function() {
+                        alert("Thay Đổi Thông Tin Không Thành Công");
+                        window.location.replace("http://localhost:3000");
+                    });
 
-
-            xhttp.open("POST", "database.json", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send(results);
+                })
 
         }
         let form = document.querySelector('form');

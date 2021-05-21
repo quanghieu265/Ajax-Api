@@ -210,9 +210,10 @@
       "status": true
     }
   ],
-  "java": [
+  "userIndex": [
     {
-      "remove":"$('.remove').click(function() {$('.modal-show').toggleClass('show');$('.modal').toggleClass('fade-in');}"
+      "UI": 10,
+      "id": 1
     }
   ]
 }

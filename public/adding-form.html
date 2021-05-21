@@ -49,11 +49,27 @@
             let results = JSON.stringify(formJSON);
 
             let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 2 & this.status == 201) {
+                    alert("Thêm Mới Học Viên Thành Công");
+                    window.location.replace("http://localhost:3000");
 
-
+                } else if (this.readyState == 2 & this.status !== 201) {
+                    alert("Thêm Mới Học Viên Không Thành Công");
+                    window.location.replace("http://localhost:3000");
+                }
+            }
             xhttp.open("POST", "http://localhost:3000/users", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("Content-Type", "application/json"); //content-type phải là application/json
             xhttp.send(results);
+
+            // $.ajax({
+            //     type: "POST",
+            //     url: "http://localhost:3000/users",
+            //     data: JSON.stringify(formJSON),
+            //     contentType: "application/json",
+            //     dataType: 'json'
+            // });
 
         }
         let form = document.querySelector('form');
