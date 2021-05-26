@@ -50,6 +50,10 @@ h1 {
     gap: 10px;
 }
 
+.info-list {
+    word-break: break-all;
+}
+
 .title-list {
     font-weight: 600;
     color: white;
@@ -202,5 +206,18 @@ a {
     }
     100% {
         background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (max-width:996px) {
+    .container {
+        width: 100%;
+        margin: 0px;
+    }
+    .title-list {
+        text-align: center;
+    }
+    .info-list {
+        gap: 0px;
     }
 }

@@ -50,6 +50,7 @@ span {
     margin: 20px auto auto auto;
     width: 100%;
     justify-content: center;
+    grid-column: 1 / span 2
 }
 
 .save {
