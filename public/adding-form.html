@@ -14,17 +14,37 @@
     <div class="container">
         <h1>Thêm Mới Học Viên</h1>
         <form action="./test.json" method="GET">
-            <label for="name">Họ tên <span>*</span></label>
-            <input type="text" id="name" name="name" placeholder="Hãy nhập tên của bạn" required>
+            <div class="row">
+                <label for="name">Họ tên </label>
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Hãy nhập tên của bạn">
+                    <div class="error-text"></div>
+                </div>
+            </div>
 
-            <label for="birth">Ngày sinh</label>
-            <input type="date" id="birth" name="birthday" placeholder="Hãy nhập ngày sinh của ban">
+            <div class="row">
+                <label for="birth">Ngày sinh</label>
+                <div>
+                    <input type="date" id="birth" name="birthday" placeholder="Hãy nhập ngày sinh của bạn">
+                    <div class="error-text"></div>
+                </div>
+            </div>
 
-            <label for="email">Email <span>*</span></label>
-            <input type="email" id="email" name="email" placeholder="Hãy nhập email của bạn" required>
+            <div class="row">
+                <label for="email">Email </label>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Hãy nhập email của bạn">
+                    <div class="error-text"></div>
+                </div>
+            </div>
 
-            <label for="phone">Phone <span>*</span></label>
-            <input type="number" id="phone" name="phone" placeholder="Hãy nhập số đt của bạn" required>
+            <div class="row">
+                <label for="phone">Phone </label>
+                <div>
+                    <input type="number" id="phone" name="phone" placeholder="Hãy nhập số đt của bạn">
+                    <div class="error-text"></div>
+                </div>
+            </div>
 
             <div class="button-form">
                 <a href="./index.html" class="go-back">
@@ -38,48 +58,8 @@
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            // lấy dữ liệu từ các ô input trong <form>
-            let data = new FormData(event.target);
-
-            let formJSON = Object.fromEntries(data.entries());
-
-            let results = JSON.stringify(formJSON);
-
-            // let xhttp = new XMLHttpRequest();
-            // xhttp.onreadystatechange = function() {
-            //     if (this.readyState == 2 & this.status == 201) {
-            //         alert("Thêm Mới Học Viên Thành Công");
-            //         window.location.replace("https://list-techmaster123.herokuapp.com");
-
-            //     } else if (this.readyState == 2 & this.status !== 201) {
-            //         alert("Thêm Mới Học Viên Không Thành Công");
-            //         window.location.replace("https://list-techmaster123.herokuapp.com");
-            //     }
-            // }
-            // xhttp.open("POST", "https://list-techmaster123.herokuapp.com/users", true);
-            // xhttp.setRequestHeader("Content-Type", "application/json"); //content-type phải là application/json
-            // xhttp.send(results);
-
-            $.ajax({
-                type: "POST",
-                url: "https://list-techmaster123.herokuapp.com/users",
-                data: JSON.stringify(formJSON),
-                contentType: "application/json",
-                dataType: 'json'
-            }).done(function() {
-                alert("Thêm Mới Học Viên Thành Công");
-                window.location.replace("https://list-techmaster123.herokuapp.com");
-            }).fail(function() {
-                alert("Có lỗi xảy ra, Thêm Mới Học Viên Không Thành Công");
-            });
-
-        }
-        let form = document.querySelector('form');
-        form.addEventListener('submit', handleFormSubmit);
-    </script>
+    <script src="./adding.js"></script>
+    <script src="./checkValid.js"></script>
 </body>
 
 </html>
