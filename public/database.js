@@ -1,5 +1,6 @@
 let myObj;
 let userID;
+let index;
 // let xmlhttp = new XMLHttpRequest; // tạo 1 biến chứa cái xml request để lấy data từ sever
 // // Xác định một hàm được gọi khi thuộc tính readyState thay đổi 
 // xmlhttp.onreadystatechange = function() {
@@ -99,7 +100,7 @@ $.ajax({
         $('.modal-show').toggleClass('show');
         $('.modal').toggleClass('fade-in');
         userID = $(this).data("id");
-        index = $(this).eq();
+        index = $(".remove").index(this);
     })
 
     // $(".edit").click(function() {
