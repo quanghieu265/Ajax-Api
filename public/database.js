@@ -99,7 +99,7 @@ $.ajax({
         $('.modal-show').toggleClass('show');
         $('.modal').toggleClass('fade-in');
         userID = $(this).data("id");
-
+        index = $(this).eq();
     })
 
     // $(".edit").click(function() {

@@ -29,7 +29,7 @@ function handleFormSubmit(event) {
         $.ajax({
             type: "POST",
             url: "https://list-techmaster123.herokuapp.com/users",
-            data: JSON.stringify(results),
+            data: results,
             contentType: "application/json",
             dataType: 'json'
         }).done(function() {
