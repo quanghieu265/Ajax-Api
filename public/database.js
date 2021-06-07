@@ -13,10 +13,10 @@ function getData(responseText) {
     for (i = 0; i < myObj.length; i++) {
         // <!-- $('.cloneitem:first').clone().appendTo('.student-list'); -->
         // <!-- Mỗi vằng lặp i sẽ clone lại rồi fill giá trị -->
-        myObj[i].name == "" ? document.getElementsByClassName("name")[i].innerHTML = "chưa biết" : document.getElementsByClassName("name")[i].innerHTML = myObj[i].name
-        myObj[i].birthday == "" ? document.getElementsByClassName("birth")[i].innerHTML = "chưa biết" : document.getElementsByClassName("birth")[i].innerHTML = myObj[i].birthday
-        myObj[i].email == "" ? document.getElementsByClassName("email")[i].innerHTML = "chưa biết" : document.getElementsByClassName("email")[i].innerHTML = myObj[i].email
-        myObj[i].phone == "" ? document.getElementsByClassName("number")[i].innerHTML = "chưa biết" : document.getElementsByClassName("number")[i].innerHTML = myObj[i].phone
+        myObj[i].name == "" ? $(".name").eq(i).text("chưa biết") : $(".name").eq(i).text(myObj[i].name);
+        myObj[i].birthday == "" ? $(".birth").eq(i).text("chưa biết") : $(".birth").eq(i).text(myObj[i].birthday);
+        myObj[i].email == "" ? $(".email").eq(i).text("chưa biết") : $(".email").eq(i).text(myObj[i].email);
+        myObj[i].phone == "" ? $(".number").eq(i).text("chưa biết") : $(".number").eq(i).text(myObj[i].phone);
         $(`.edit:eq(${i})`).attr("href", `./edit-form.html?id=${myObj[i].id}`);
         $(`.remove:eq(${i})`).attr("data-id", `${myObj[i].id}`);
 
