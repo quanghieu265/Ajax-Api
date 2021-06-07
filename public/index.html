@@ -13,8 +13,21 @@
 <body>
     <div class="container">
         <h1>Danh sách học viên</h1>
-        <a href="./adding-form.html" class="add"><i class="fas fa-plus-circle"></i>Thêm học viên
-        </a>
+        <div class="function-button">
+            <a href="./adding-form.html" class="add"><i class="fas fa-plus-circle"></i>Thêm học viên</a>
+            <div class="filter">
+                <label for="soft">Sắp xếp học viên:</label>
+                <select name="soft" id="soft">
+            <option value="new">Mới nhất</option>
+            <option value="old">Cũ nhất</option>
+            </select>
+            </div>
+            <div class="search-box">
+                <input type="text" id="name-student" name="name-student" placeholder="Hãy nhập tên học viên">
+                <button class="search-button">Tìm kiếm</button>
+            </div>
+        </div>
+
         <div class="student-list">
             <div class="title-list">
                 <p>Họ tên</p>

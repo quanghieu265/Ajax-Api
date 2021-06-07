@@ -30,8 +30,8 @@ h1 {
 .error-text {
     color: #BC2D3B;
     font-style: italic;
-    height: 30px;
     margin-top: 10px;
+    height: auto;
 }
 
 .visible {
@@ -40,7 +40,7 @@ h1 {
 
 form {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
     /* display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 20px;
@@ -48,10 +48,18 @@ form {
 }
 
 input {
-    padding: 12px;
+    padding: 8px 12px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     width: 100%;
+}
+
+input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
 
 input:focus,

@@ -1,4 +1,5 @@
-let searchParams = new URLSearchParams(window.location.search);
+//Lấy số ID dựa theo URL
+let searchParams = new URLSearchParams(window.location.search); //window.location.search trả lại kết quả là phần truy vấn của URL 
 let userID = searchParams.get("id");
 
 $.ajax({
@@ -16,7 +17,10 @@ form.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(event) {
     event.preventDefault();
+    //Chạy hàm kiểm tra dữ liệu form
     checkValidate();
+
+    //Dữ liệu hợp lệ thì bắt đầu PUT(sửa) dữ liệu lên sever
     if (checkValidate()) {
         let data = new FormData(event.target);
 
@@ -25,7 +29,7 @@ function handleFormSubmit(event) {
         let results = JSON.stringify(formJSON);
 
 
-        // Gửi dữ liệu dựa theo số ID đã được lưu trong file userIdStorage
+        // Sửa dữ liệu dựa theo số ID đã được lấy từ URL và lưu vào userID
         $.ajax({
             type: "PUT",
             url: `https://list-techmaster123.herokuapp.com/users/${userID}`,
@@ -33,9 +37,11 @@ function handleFormSubmit(event) {
             contentType: "application/json",
             dataType: 'json',
         }).done(function() {
-            alert("Thay Đổi Thông Tin Thành Công")
+            alert("Thay Đổi Thông Tin Thành Công");
+            window.location.replace("https://list-techmaster123.herokuapp.com");
         }).fail(function() {
             alert("Thay Đổi Thông Tin Không Thành Công");
+            window.location.replace("https://list-techmaster123.herokuapp.com");
         });
     }
 }
