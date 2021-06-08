@@ -19,9 +19,16 @@ $(".search-button").click(function() {
                 userObj[i].phone == "" ? $(".number").eq(x).text("chưa biết") : $(".number").eq(x).text(userObj[i].phone);
                 $(`.edit:eq(${x})`).attr("href", `./edit-form.html?id=${userObj[i].id}`);
                 $(`.remove:eq(${x})`).attr("data-id", `${userObj[i].id}`);
+
                 x++;
             }
         }
+        $('.remove').click(function() {
+            $('.modal-show').toggleClass('show');
+            $('.modal').toggleClass('fade-in');
+            userID = $(this).data("id");
+            index = $(".remove").index(this);
+        })
         if (x === 0) {
             alert("Không Tìm Thấy Học Viên")
             changeValue();

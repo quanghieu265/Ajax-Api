@@ -1,6 +1,4 @@
 let number = "1"; // Số page đầu tiên
-let totalPage = $(".page-item").length - 2; // Tổng số page 
-
 
 function clickToPage() {
     if ($(this).text() == "Prev") {
@@ -20,6 +18,7 @@ function clickToPage() {
 }
 
 function changePage() {
+    let totalPage = $(".page-item").length - 2; // Tổng số page 
     rebuildHtml();
     if ($("#sort").val() === "old") {
         $.ajax({
@@ -46,5 +45,4 @@ function changePage() {
     } else {
         $(".page-item").removeClass("disabled")
     }
-
 }
