@@ -1,25 +1,35 @@
 let myObj;
+let userDataAll;
 let userID;
 let index;
-let userObj;
-let limitNumber = 4;
 let numberPage;
-
+let limitNumber = 4;
+let inputValue = "";
 //Tạo Thanh Pagination
 $.ajax({
     type: "GET",
     url: "https://list-techmaster123.herokuapp.com/users"
 }).done(function(responseObj) {
-    userObj = responseObj;
-    numberPage = Math.ceil(userObj.length / limitNumber);
+    userDataAll = responseObj;
+    creatPagination(userDataAll);
+});
+
+function creatPagination(Obj) {
+    numberPage = Math.ceil(Obj.length / limitNumber);
     let htmlContent = "";
     for (i = 0; i < numberPage - 1; i++) {
         htmlContent += `<li class="page-item"><a href="#">${i+2}</a></li>`
     }
     $(".active").after(htmlContent);
     $(".page-item").click(clickToPage)
+}
 
-});
+// // Lấy tổng số data trước khi chia cho limit
+// $.ajax("https://list-techmaster123.herokuapp.com/users?_sort=id&_order=desc&_page=1&_limit=4", {
+//         method: "GET"
+//     }).done(function (data, textStatus, request) {
+//             console.log(request.getResponseHeader('x-Total-Count') )
+//     })
 
 //Tạo danh sách học viên
 $.ajax({

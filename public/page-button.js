@@ -19,19 +19,11 @@ function clickToPage() {
 
 function changePage() {
     let totalPage = $(".page-item").length - 2; // Tổng số page 
-    rebuildHtml();
-    if ($("#sort").val() === "old") {
-        $.ajax({
-            type: "GET",
-            url: "https://list-techmaster123.herokuapp.com/users" + `?_page=${number}&_limit=${limitNumber}`
-        }).done(getData);
-    } else {
-        $.ajax({
-            type: "GET",
-            url: "https://list-techmaster123.herokuapp.com/users" + `?_sort=id&_order=desc&_page=${number}&_limit=${limitNumber}`
-        }).done(getData);
-    }
 
+    //sửa lại html theo giá trị số trang hiện tại (number) và theo thứ tự (sort)
+    changeValue()
+
+    //Tạo trường hợp để sửa CSS cho nút Page
     $(".page-item").removeClass("active")
     $(".page-item").eq(number).addClass("active")
 
